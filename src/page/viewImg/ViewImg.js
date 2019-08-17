@@ -18,7 +18,7 @@ const screenHeight = Dimensions.get('window').height;
 import ImageViewer from 'react-native-image-zoom-viewer';
 
 
-
+// 图片预览
 class ViewImgScreen extends Component {
     constructor(props) {
         super(props);

@@ -80,7 +80,7 @@ class VideoList extends Component {
         let height = item.data.playInfo.length > 0 ? item.data.playInfo[0].height : screenHeight  //  高
         if(this.state.netStatus == 'WIFI' || this.state.netStatus == 'wifi') {
             this.jumpVideo(url,width,height)
-        } else if(this.state.netStatus == 'MOBILE' || this.state.netStatus == 'mobile'){
+        } else {
             Alert.alert(
                 '确认',
                 '当前为流量状态，是否使用流量观看视频？',
@@ -90,9 +90,20 @@ class VideoList extends Component {
                 ],
                 { cancelable: false }
               )
-        } else {
-            ToastAndroid.show('网络不可用', ToastAndroid.SHORT)
         }
+        // if(this.state.netStatus == 'MOBILE' || this.state.netStatus == 'mobile'){
+        //     Alert.alert(
+        //         '确认',
+        //         '当前为流量状态，是否使用流量观看视频？',
+        //         [
+        //           {text: '不了', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+        //           {text: '有钱任性', onPress: () => this.jumpVideo(url,width,height)},
+        //         ],
+        //         { cancelable: false }
+        //       )
+        // } else {
+        //     ToastAndroid.show('网络不可用', ToastAndroid.SHORT)
+        // }
     }
     //  跳转到视频播放页面
     jumpVideo = (url,width,height,title) => {

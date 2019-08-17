@@ -77,7 +77,7 @@ class VideoList extends Component {
         return `${new Date(t).getFullYear()}年${(new Date(t).getMonth())+1}月${new Date(t).getDate()}日`
     }
     //  加载更多
-    loadMore = () => {                                                                      
+    loadMore = () => {                                                                
         // this.props.dispatch(refreshing(true))
         if (this.state.data.length > this.state.saleMovies.length) {
             let [dl,sl] = [this.state.data.length,this.state.saleMovies.length]
